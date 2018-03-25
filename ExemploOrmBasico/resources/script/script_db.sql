@@ -32,6 +32,7 @@ CREATE TABLE IF NOT EXISTS compra (
     id_produto INT,
     quantidade INT,
     valor_total DECIMAL(10,2),
+    data_compra DATETIME DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (id_cliente) REFERENCES cliente (id),
     FOREIGN KEY (id_produto) REFERENCES produto (id)
 );

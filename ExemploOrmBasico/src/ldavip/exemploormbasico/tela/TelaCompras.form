@@ -308,6 +308,924 @@
         </Container>
       </SubComponents>
     </Container>
+    <Container class="javax.swing.JDialog" name="dialogFiltro">
+      <Properties>
+        <Property name="size" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[300, 200]"/>
+        </Property>
+      </Properties>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout"/>
+      <SubComponents>
+        <Container class="javax.swing.JPanel" name="jPanel10">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+              <BorderConstraints direction="Center"/>
+            </Constraint>
+          </Constraints>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout"/>
+          <SubComponents>
+            <Container class="javax.swing.JPanel" name="jPanel11">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
+                    <EtchetBorder/>
+                  </Border>
+                </Property>
+                <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                  <Dimension value="[506, 280]"/>
+                </Property>
+              </Properties>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+                  <BorderConstraints direction="Center"/>
+                </Constraint>
+              </Constraints>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
+                <Property name="useNullLayout" type="boolean" value="false"/>
+              </Layout>
+              <SubComponents>
+                <Container class="javax.swing.JPanel" name="jPanel18">
+                  <Properties>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                    </Property>
+                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                      <Border info="org.netbeans.modules.form.compat2.border.CompoundBorderInfo">
+                        <CompoundBorder>
+                          <Border PropertyName="outside" info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+                            <TitledBorder title="Cliente"/>
+                          </Border>
+                          <Border PropertyName="inside" info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
+                            <EtchetBorder/>
+                          </Border>
+                        </CompoundBorder>
+                      </Border>
+                    </Property>
+                  </Properties>
+                  <Constraints>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                      <AbsoluteConstraints x="10" y="380" width="360" height="190"/>
+                    </Constraint>
+                  </Constraints>
+
+                  <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
+                    <Property name="useNullLayout" type="boolean" value="false"/>
+                  </Layout>
+                  <SubComponents>
+                    <Container class="javax.swing.JPanel" name="jPanel19">
+                      <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                        </Property>
+                        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                          <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+                            <TitledBorder title="C&#xf3;digo"/>
+                          </Border>
+                        </Property>
+                      </Properties>
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                          <AbsoluteConstraints x="20" y="30" width="130" height="-1"/>
+                        </Constraint>
+                      </Constraints>
+
+                      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout"/>
+                      <SubComponents>
+                        <Component class="javax.swing.JTextField" name="txtCodigoClienteFiltro">
+                          <Properties>
+                            <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                              <Dimension value="[100, 24]"/>
+                            </Property>
+                          </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtCodigoClienteFiltroActionPerformed"/>
+                          </Events>
+                          <Constraints>
+                            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+                              <BorderConstraints direction="Center"/>
+                            </Constraint>
+                          </Constraints>
+                        </Component>
+                      </SubComponents>
+                    </Container>
+                    <Container class="javax.swing.JPanel" name="jPanel20">
+                      <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                        </Property>
+                        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                          <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+                            <TitledBorder title="Nome"/>
+                          </Border>
+                        </Property>
+                      </Properties>
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                          <AbsoluteConstraints x="20" y="100" width="320" height="-1"/>
+                        </Constraint>
+                      </Constraints>
+
+                      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout"/>
+                      <SubComponents>
+                        <Component class="javax.swing.JTextField" name="txtNomeClienteFiltro">
+                          <Properties>
+                            <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                              <Dimension value="[300, 24]"/>
+                            </Property>
+                          </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtNomeClienteFiltroActionPerformed"/>
+                          </Events>
+                          <Constraints>
+                            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+                              <BorderConstraints direction="Center"/>
+                            </Constraint>
+                          </Constraints>
+                        </Component>
+                      </SubComponents>
+                    </Container>
+                    <Container class="javax.swing.JPanel" name="jPanel21">
+                      <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                        </Property>
+                        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                          <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+                            <TitledBorder title="Status"/>
+                          </Border>
+                        </Property>
+                      </Properties>
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                          <AbsoluteConstraints x="170" y="30" width="170" height="-1"/>
+                        </Constraint>
+                      </Constraints>
+
+                      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout"/>
+                      <SubComponents>
+                        <Component class="javax.swing.JComboBox" name="comboStatusClienteFiltro">
+                          <Properties>
+                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                              <StringArray count="3">
+                                <StringItem index="0" value="Todos"/>
+                                <StringItem index="1" value="Ativo"/>
+                                <StringItem index="2" value="N&#xe3;o ativo"/>
+                              </StringArray>
+                            </Property>
+                          </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                          </AuxValues>
+                          <Constraints>
+                            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+                              <BorderConstraints direction="Center"/>
+                            </Constraint>
+                          </Constraints>
+                        </Component>
+                      </SubComponents>
+                    </Container>
+                  </SubComponents>
+                </Container>
+                <Container class="javax.swing.JPanel" name="jPanel28">
+                  <Properties>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                    </Property>
+                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                      <Border info="org.netbeans.modules.form.compat2.border.CompoundBorderInfo">
+                        <CompoundBorder>
+                          <Border PropertyName="outside" info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+                            <TitledBorder title="Produto"/>
+                          </Border>
+                          <Border PropertyName="inside" info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
+                            <EtchetBorder/>
+                          </Border>
+                        </CompoundBorder>
+                      </Border>
+                    </Property>
+                  </Properties>
+                  <Constraints>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                      <AbsoluteConstraints x="380" y="10" width="380" height="350"/>
+                    </Constraint>
+                  </Constraints>
+
+                  <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
+                    <Property name="useNullLayout" type="boolean" value="false"/>
+                  </Layout>
+                  <SubComponents>
+                    <Container class="javax.swing.JPanel" name="jPanel22">
+                      <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                        </Property>
+                        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                          <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+                            <TitledBorder title="C&#xf3;digo"/>
+                          </Border>
+                        </Property>
+                      </Properties>
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                          <AbsoluteConstraints x="20" y="30" width="130" height="-1"/>
+                        </Constraint>
+                      </Constraints>
+
+                      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout"/>
+                      <SubComponents>
+                        <Component class="javax.swing.JTextField" name="txtCodigoProdutoFiltro">
+                          <Properties>
+                            <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                              <Dimension value="[100, 24]"/>
+                            </Property>
+                          </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtCodigoProdutoFiltroActionPerformed"/>
+                          </Events>
+                          <Constraints>
+                            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+                              <BorderConstraints direction="Center"/>
+                            </Constraint>
+                          </Constraints>
+                        </Component>
+                      </SubComponents>
+                    </Container>
+                    <Container class="javax.swing.JPanel" name="jPanel23">
+                      <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                        </Property>
+                        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                          <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+                            <TitledBorder title="Descri&#xe7;&#xe3;o"/>
+                          </Border>
+                        </Property>
+                      </Properties>
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                          <AbsoluteConstraints x="20" y="100" width="-1" height="-1"/>
+                        </Constraint>
+                      </Constraints>
+
+                      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout"/>
+                      <SubComponents>
+                        <Component class="javax.swing.JTextField" name="txtDescricaoProdutoFiltro">
+                          <Properties>
+                            <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                              <Dimension value="[300, 24]"/>
+                            </Property>
+                          </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtDescricaoProdutoFiltroActionPerformed"/>
+                          </Events>
+                          <Constraints>
+                            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+                              <BorderConstraints direction="Center"/>
+                            </Constraint>
+                          </Constraints>
+                        </Component>
+                      </SubComponents>
+                    </Container>
+                    <Container class="javax.swing.JPanel" name="jPanel24">
+                      <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                        </Property>
+                        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                          <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+                            <TitledBorder title="Pre&#xe7;o Unit&#xe1;rio"/>
+                          </Border>
+                        </Property>
+                      </Properties>
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                          <AbsoluteConstraints x="20" y="180" width="310" height="-1"/>
+                        </Constraint>
+                      </Constraints>
+
+                      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout"/>
+                      <SubComponents>
+                        <Container class="javax.swing.JPanel" name="jPanel25">
+                          <Properties>
+                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="ff" green="ff" id="white" palette="1" red="ff" type="palette"/>
+                            </Property>
+                          </Properties>
+                          <Constraints>
+                            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+                              <BorderConstraints direction="West"/>
+                            </Constraint>
+                          </Constraints>
+
+                          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout"/>
+                          <SubComponents>
+                            <Component class="javax.swing.JLabel" name="jLabel3">
+                              <Properties>
+                                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                                </Property>
+                                <Property name="text" type="java.lang.String" value="M&#xed;nimo"/>
+                              </Properties>
+                              <Constraints>
+                                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+                                  <BorderConstraints direction="West"/>
+                                </Constraint>
+                              </Constraints>
+                            </Component>
+                            <Component class="javax.swing.JTextField" name="txtPrecoUnitarioMinimoProdutoFiltro">
+                              <Properties>
+                                <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                                  <Dimension value="[100, 24]"/>
+                                </Property>
+                              </Properties>
+                              <Events>
+                                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtPrecoUnitarioMinimoProdutoFiltroActionPerformed"/>
+                              </Events>
+                              <Constraints>
+                                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+                                  <BorderConstraints direction="Center"/>
+                                </Constraint>
+                              </Constraints>
+                            </Component>
+                          </SubComponents>
+                        </Container>
+                        <Container class="javax.swing.JPanel" name="jPanel26">
+                          <Properties>
+                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="ff" green="ff" id="white" palette="1" red="ff" type="palette"/>
+                            </Property>
+                          </Properties>
+                          <Constraints>
+                            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+                              <BorderConstraints direction="East"/>
+                            </Constraint>
+                          </Constraints>
+
+                          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout"/>
+                          <SubComponents>
+                            <Component class="javax.swing.JLabel" name="jLabel4">
+                              <Properties>
+                                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="ff" green="ff" id="white" palette="1" red="ff" type="palette"/>
+                                </Property>
+                                <Property name="text" type="java.lang.String" value="M&#xe1;ximo"/>
+                              </Properties>
+                              <Constraints>
+                                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+                                  <BorderConstraints direction="West"/>
+                                </Constraint>
+                              </Constraints>
+                            </Component>
+                            <Component class="javax.swing.JTextField" name="txtPrecoUnitarioMaximoProdutoFiltro">
+                              <Properties>
+                                <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                                  <Dimension value="[100, 24]"/>
+                                </Property>
+                              </Properties>
+                              <Events>
+                                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtPrecoUnitarioMaximoProdutoFiltroActionPerformed"/>
+                              </Events>
+                              <Constraints>
+                                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+                                  <BorderConstraints direction="Center"/>
+                                </Constraint>
+                              </Constraints>
+                            </Component>
+                          </SubComponents>
+                        </Container>
+                      </SubComponents>
+                    </Container>
+                    <Container class="javax.swing.JPanel" name="jPanel27">
+                      <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                        </Property>
+                        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                          <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+                            <TitledBorder title="Categoria"/>
+                          </Border>
+                        </Property>
+                      </Properties>
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                          <AbsoluteConstraints x="20" y="260" width="-1" height="-1"/>
+                        </Constraint>
+                      </Constraints>
+
+                      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout"/>
+                      <SubComponents>
+                        <Component class="javax.swing.JTextField" name="txtCategoriaProdutoFiltro">
+                          <Properties>
+                            <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                              <Dimension value="[300, 24]"/>
+                            </Property>
+                          </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtCategoriaProdutoFiltroActionPerformed"/>
+                          </Events>
+                          <Constraints>
+                            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+                              <BorderConstraints direction="Center"/>
+                            </Constraint>
+                          </Constraints>
+                        </Component>
+                      </SubComponents>
+                    </Container>
+                  </SubComponents>
+                </Container>
+                <Container class="javax.swing.JPanel" name="jPanel29">
+                  <Properties>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                    </Property>
+                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                      <Border info="org.netbeans.modules.form.compat2.border.CompoundBorderInfo">
+                        <CompoundBorder>
+                          <Border PropertyName="outside" info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+                            <TitledBorder title="Compra"/>
+                          </Border>
+                          <Border PropertyName="inside" info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
+                            <EtchetBorder/>
+                          </Border>
+                        </CompoundBorder>
+                      </Border>
+                    </Property>
+                  </Properties>
+                  <Constraints>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                      <AbsoluteConstraints x="10" y="10" width="360" height="350"/>
+                    </Constraint>
+                  </Constraints>
+
+                  <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
+                    <Property name="useNullLayout" type="boolean" value="false"/>
+                  </Layout>
+                  <SubComponents>
+                    <Container class="javax.swing.JPanel" name="jPanel30">
+                      <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                        </Property>
+                        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                          <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+                            <TitledBorder title="C&#xf3;digo"/>
+                          </Border>
+                        </Property>
+                      </Properties>
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                          <AbsoluteConstraints x="20" y="30" width="130" height="-1"/>
+                        </Constraint>
+                      </Constraints>
+
+                      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout"/>
+                      <SubComponents>
+                        <Component class="javax.swing.JTextField" name="txtCodigoCompraFiltro">
+                          <Properties>
+                            <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                              <Dimension value="[100, 24]"/>
+                            </Property>
+                          </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtCodigoCompraFiltroActionPerformed"/>
+                          </Events>
+                          <Constraints>
+                            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+                              <BorderConstraints direction="Center"/>
+                            </Constraint>
+                          </Constraints>
+                        </Component>
+                      </SubComponents>
+                    </Container>
+                    <Container class="javax.swing.JPanel" name="jPanel33">
+                      <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                        </Property>
+                        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                          <Border info="org.netbeans.modules.form.compat2.border.CompoundBorderInfo">
+                            <CompoundBorder>
+                              <Border PropertyName="outside" info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+                                <TitledBorder title="Quantidade do produto"/>
+                              </Border>
+                              <Border PropertyName="inside" info="org.netbeans.modules.form.compat2.border.EmptyBorderInfo">
+                                <EmptyBorder/>
+                              </Border>
+                            </CompoundBorder>
+                          </Border>
+                        </Property>
+                      </Properties>
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                          <AbsoluteConstraints x="20" y="180" width="320" height="-1"/>
+                        </Constraint>
+                      </Constraints>
+
+                      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout"/>
+                      <SubComponents>
+                        <Container class="javax.swing.JPanel" name="jPanel34">
+                          <Properties>
+                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="ff" green="ff" id="white" palette="1" red="ff" type="palette"/>
+                            </Property>
+                          </Properties>
+                          <Constraints>
+                            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+                              <BorderConstraints direction="West"/>
+                            </Constraint>
+                          </Constraints>
+
+                          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout"/>
+                          <SubComponents>
+                            <Component class="javax.swing.JLabel" name="jLabel5">
+                              <Properties>
+                                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                                </Property>
+                                <Property name="text" type="java.lang.String" value="M&#xed;nimo"/>
+                              </Properties>
+                              <Constraints>
+                                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+                                  <BorderConstraints direction="West"/>
+                                </Constraint>
+                              </Constraints>
+                            </Component>
+                            <Component class="javax.swing.JTextField" name="txtQuantidadeMinimaCompraFiltro">
+                              <Properties>
+                                <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                                  <Dimension value="[100, 24]"/>
+                                </Property>
+                              </Properties>
+                              <Events>
+                                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtQuantidadeMinimaCompraFiltroActionPerformed"/>
+                              </Events>
+                              <Constraints>
+                                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+                                  <BorderConstraints direction="Center"/>
+                                </Constraint>
+                              </Constraints>
+                            </Component>
+                          </SubComponents>
+                        </Container>
+                        <Container class="javax.swing.JPanel" name="jPanel35">
+                          <Properties>
+                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="ff" green="ff" id="white" palette="1" red="ff" type="palette"/>
+                            </Property>
+                          </Properties>
+                          <Constraints>
+                            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+                              <BorderConstraints direction="East"/>
+                            </Constraint>
+                          </Constraints>
+
+                          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout"/>
+                          <SubComponents>
+                            <Component class="javax.swing.JLabel" name="jLabel6">
+                              <Properties>
+                                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="ff" green="ff" id="white" palette="1" red="ff" type="palette"/>
+                                </Property>
+                                <Property name="text" type="java.lang.String" value="M&#xe1;ximo"/>
+                              </Properties>
+                              <Constraints>
+                                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+                                  <BorderConstraints direction="West"/>
+                                </Constraint>
+                              </Constraints>
+                            </Component>
+                            <Component class="javax.swing.JTextField" name="txtQuantidadeMaximaCompraFiltro">
+                              <Properties>
+                                <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                                  <Dimension value="[100, 24]"/>
+                                </Property>
+                              </Properties>
+                              <Events>
+                                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtQuantidadeMaximaCompraFiltroActionPerformed"/>
+                              </Events>
+                              <Constraints>
+                                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+                                  <BorderConstraints direction="Center"/>
+                                </Constraint>
+                              </Constraints>
+                            </Component>
+                          </SubComponents>
+                        </Container>
+                      </SubComponents>
+                    </Container>
+                    <Container class="javax.swing.JPanel" name="jPanel31">
+                      <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                        </Property>
+                        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                          <Border info="org.netbeans.modules.form.compat2.border.CompoundBorderInfo">
+                            <CompoundBorder>
+                              <Border PropertyName="outside" info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+                                <TitledBorder title="Valor da compra"/>
+                              </Border>
+                              <Border PropertyName="inside" info="org.netbeans.modules.form.compat2.border.EmptyBorderInfo">
+                                <EmptyBorder/>
+                              </Border>
+                            </CompoundBorder>
+                          </Border>
+                        </Property>
+                      </Properties>
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                          <AbsoluteConstraints x="20" y="260" width="320" height="-1"/>
+                        </Constraint>
+                      </Constraints>
+
+                      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout"/>
+                      <SubComponents>
+                        <Container class="javax.swing.JPanel" name="jPanel32">
+                          <Properties>
+                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="ff" green="ff" id="white" palette="1" red="ff" type="palette"/>
+                            </Property>
+                          </Properties>
+                          <Constraints>
+                            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+                              <BorderConstraints direction="West"/>
+                            </Constraint>
+                          </Constraints>
+
+                          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout"/>
+                          <SubComponents>
+                            <Component class="javax.swing.JLabel" name="jLabel7">
+                              <Properties>
+                                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                                </Property>
+                                <Property name="text" type="java.lang.String" value="M&#xed;nimo"/>
+                              </Properties>
+                              <Constraints>
+                                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+                                  <BorderConstraints direction="West"/>
+                                </Constraint>
+                              </Constraints>
+                            </Component>
+                            <Component class="javax.swing.JTextField" name="txtValorMinimoCompraFiltro">
+                              <Properties>
+                                <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                                  <Dimension value="[100, 24]"/>
+                                </Property>
+                              </Properties>
+                              <Events>
+                                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtValorMinimoCompraFiltroActionPerformed"/>
+                              </Events>
+                              <Constraints>
+                                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+                                  <BorderConstraints direction="Center"/>
+                                </Constraint>
+                              </Constraints>
+                            </Component>
+                          </SubComponents>
+                        </Container>
+                        <Container class="javax.swing.JPanel" name="jPanel36">
+                          <Properties>
+                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="ff" green="ff" id="white" palette="1" red="ff" type="palette"/>
+                            </Property>
+                          </Properties>
+                          <Constraints>
+                            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+                              <BorderConstraints direction="East"/>
+                            </Constraint>
+                          </Constraints>
+
+                          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout"/>
+                          <SubComponents>
+                            <Component class="javax.swing.JLabel" name="jLabel8">
+                              <Properties>
+                                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="ff" green="ff" id="white" palette="1" red="ff" type="palette"/>
+                                </Property>
+                                <Property name="text" type="java.lang.String" value="M&#xe1;ximo"/>
+                              </Properties>
+                              <Constraints>
+                                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+                                  <BorderConstraints direction="West"/>
+                                </Constraint>
+                              </Constraints>
+                            </Component>
+                            <Component class="javax.swing.JTextField" name="txtValorMaximoCompraFiltro">
+                              <Properties>
+                                <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                                  <Dimension value="[100, 24]"/>
+                                </Property>
+                              </Properties>
+                              <Events>
+                                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtValorMaximoCompraFiltroActionPerformed"/>
+                              </Events>
+                              <Constraints>
+                                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+                                  <BorderConstraints direction="Center"/>
+                                </Constraint>
+                              </Constraints>
+                            </Component>
+                          </SubComponents>
+                        </Container>
+                      </SubComponents>
+                    </Container>
+                    <Container class="javax.swing.JPanel" name="jPanel37">
+                      <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                        </Property>
+                        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                          <Border info="org.netbeans.modules.form.compat2.border.CompoundBorderInfo">
+                            <CompoundBorder>
+                              <Border PropertyName="outside" info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+                                <TitledBorder title="Per&#xed;odo"/>
+                              </Border>
+                              <Border PropertyName="inside" info="org.netbeans.modules.form.compat2.border.EmptyBorderInfo">
+                                <EmptyBorder/>
+                              </Border>
+                            </CompoundBorder>
+                          </Border>
+                        </Property>
+                      </Properties>
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                          <AbsoluteConstraints x="20" y="100" width="320" height="-1"/>
+                        </Constraint>
+                      </Constraints>
+
+                      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout"/>
+                      <SubComponents>
+                        <Container class="javax.swing.JPanel" name="jPanel38">
+                          <Properties>
+                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="ff" green="ff" id="white" palette="1" red="ff" type="palette"/>
+                            </Property>
+                          </Properties>
+                          <Constraints>
+                            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+                              <BorderConstraints direction="West"/>
+                            </Constraint>
+                          </Constraints>
+
+                          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout"/>
+                          <SubComponents>
+                            <Component class="javax.swing.JLabel" name="jLabel9">
+                              <Properties>
+                                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                                </Property>
+                                <Property name="text" type="java.lang.String" value="In&#xed;cial"/>
+                                <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                                  <Dimension value="[50, 16]"/>
+                                </Property>
+                              </Properties>
+                              <Constraints>
+                                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+                                  <BorderConstraints direction="West"/>
+                                </Constraint>
+                              </Constraints>
+                            </Component>
+                            <Component class="javax.swing.JFormattedTextField" name="txtDataInicialCompraFiltro">
+                              <Properties>
+                                <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
+                                  <Format format="dd/MM/yyyy" subtype="-1" type="1"/>
+                                </Property>
+                                <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                                  <Dimension value="[90, 28]"/>
+                                </Property>
+                              </Properties>
+                              <Constraints>
+                                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+                                  <BorderConstraints direction="East"/>
+                                </Constraint>
+                              </Constraints>
+                            </Component>
+                          </SubComponents>
+                        </Container>
+                        <Container class="javax.swing.JPanel" name="jPanel39">
+                          <Properties>
+                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="ff" green="ff" id="white" palette="1" red="ff" type="palette"/>
+                            </Property>
+                          </Properties>
+                          <Constraints>
+                            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+                              <BorderConstraints direction="East"/>
+                            </Constraint>
+                          </Constraints>
+
+                          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout"/>
+                          <SubComponents>
+                            <Component class="javax.swing.JLabel" name="jLabel10">
+                              <Properties>
+                                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="ff" green="ff" id="white" palette="1" red="ff" type="palette"/>
+                                </Property>
+                                <Property name="text" type="java.lang.String" value="Final"/>
+                                <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                                  <Dimension value="[50, 16]"/>
+                                </Property>
+                              </Properties>
+                              <Constraints>
+                                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+                                  <BorderConstraints direction="West"/>
+                                </Constraint>
+                              </Constraints>
+                            </Component>
+                            <Component class="javax.swing.JFormattedTextField" name="txtDataFinalCompraFiltro">
+                              <Properties>
+                                <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
+                                  <Format format="dd/MM/yyyy" subtype="-1" type="1"/>
+                                </Property>
+                                <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                                  <Dimension value="[90, 28]"/>
+                                </Property>
+                              </Properties>
+                              <Constraints>
+                                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+                                  <BorderConstraints direction="East"/>
+                                </Constraint>
+                              </Constraints>
+                            </Component>
+                          </SubComponents>
+                        </Container>
+                      </SubComponents>
+                    </Container>
+                  </SubComponents>
+                </Container>
+              </SubComponents>
+            </Container>
+            <Container class="javax.swing.JToolBar" name="jToolBar4">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
+                <Property name="floatable" type="boolean" value="false"/>
+                <Property name="rollover" type="boolean" value="true"/>
+                <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                  <Color id="Default Cursor"/>
+                </Property>
+                <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                  <Dimension value="[10000000, 30]"/>
+                </Property>
+                <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                  <Dimension value="[100, 30]"/>
+                </Property>
+              </Properties>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+                  <BorderConstraints direction="South"/>
+                </Constraint>
+              </Constraints>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBoxLayout"/>
+              <SubComponents>
+                <Component class="javax.swing.JButton" name="btnFiltrarConsulta">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Filtrar"/>
+                    <Property name="focusable" type="boolean" value="false"/>
+                    <Property name="horizontalTextPosition" type="int" value="0"/>
+                    <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                      <Dimension value="[70, 30]"/>
+                    </Property>
+                    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                      <Dimension value="[70, 30]"/>
+                    </Property>
+                    <Property name="verticalTextPosition" type="int" value="3"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnFiltrarConsultaActionPerformed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JButton" name="btnCancelarFiltro">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Cancelar"/>
+                    <Property name="focusable" type="boolean" value="false"/>
+                    <Property name="horizontalTextPosition" type="int" value="0"/>
+                    <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                      <Dimension value="[70, 30]"/>
+                    </Property>
+                    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                      <Dimension value="[70, 30]"/>
+                    </Property>
+                    <Property name="verticalTextPosition" type="int" value="3"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCancelarFiltroActionPerformed"/>
+                  </Events>
+                </Component>
+              </SubComponents>
+            </Container>
+          </SubComponents>
+        </Container>
+      </SubComponents>
+    </Container>
   </NonVisualComponents>
   <Properties>
     <Property name="closable" type="boolean" value="true"/>
@@ -385,7 +1303,7 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JTable" name="tabelaCompras">
+                <Component class="javax.swing.JTable" name="tabela">
                   <Properties>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                       <Table columnCount="0" rowCount="0"/>
@@ -396,7 +1314,7 @@
             </Container>
           </SubComponents>
         </Container>
-        <Container class="javax.swing.JToolBar" name="jToolBar1">
+        <Container class="javax.swing.JToolBar" name="jToolBar3">
           <Properties>
             <Property name="rollover" type="boolean" value="true"/>
           </Properties>
@@ -410,14 +1328,14 @@
           <SubComponents>
             <Component class="javax.swing.JButton" name="btnNovo">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="2" name="/home/dev/Documents/projects/java/ExemploOrmBasico/resources/icon/16/add_16.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Novo"/>
                 <Property name="focusable" type="boolean" value="false"/>
-                <Property name="horizontalTextPosition" type="int" value="0"/>
-                <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                  <Dimension value="[70, 30]"/>
-                </Property>
+                <Property name="horizontalTextPosition" type="int" value="4"/>
                 <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                  <Dimension value="[70, 30]"/>
+                  <Dimension value="[90, 40]"/>
                 </Property>
                 <Property name="verticalTextPosition" type="int" value="3"/>
               </Properties>
@@ -427,14 +1345,17 @@
             </Component>
             <Component class="javax.swing.JButton" name="btnAlterar">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="2" name="/home/dev/Documents/projects/java/ExemploOrmBasico/resources/icon/16/edit_16.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Alterar"/>
                 <Property name="focusable" type="boolean" value="false"/>
-                <Property name="horizontalTextPosition" type="int" value="0"/>
+                <Property name="horizontalTextPosition" type="int" value="4"/>
                 <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                   <Dimension value="[70, 30]"/>
                 </Property>
                 <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                  <Dimension value="[70, 30]"/>
+                  <Dimension value="[90, 40]"/>
                 </Property>
                 <Property name="verticalTextPosition" type="int" value="3"/>
               </Properties>
@@ -444,19 +1365,39 @@
             </Component>
             <Component class="javax.swing.JButton" name="btnRemover">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="2" name="/home/dev/Documents/projects/java/ExemploOrmBasico/resources/icon/16/remove_16.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Remover"/>
                 <Property name="focusable" type="boolean" value="false"/>
-                <Property name="horizontalTextPosition" type="int" value="0"/>
-                <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                  <Dimension value="[70, 30]"/>
-                </Property>
+                <Property name="horizontalTextPosition" type="int" value="4"/>
                 <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                  <Dimension value="[70, 30]"/>
+                  <Dimension value="[90, 40]"/>
                 </Property>
                 <Property name="verticalTextPosition" type="int" value="3"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRemoverActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="btnFiltrar">
+              <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="2" name="/home/dev/Documents/projects/java/ExemploOrmBasico/resources/icon/16/search_16.png"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Filtrar"/>
+                <Property name="focusable" type="boolean" value="false"/>
+                <Property name="horizontalTextPosition" type="int" value="4"/>
+                <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                  <Dimension value="[70, 30]"/>
+                </Property>
+                <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                  <Dimension value="[90, 40]"/>
+                </Property>
+                <Property name="verticalTextPosition" type="int" value="3"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnFiltrarActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>

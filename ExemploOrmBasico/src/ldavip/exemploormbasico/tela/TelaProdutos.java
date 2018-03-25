@@ -11,13 +11,9 @@ import ldavip.exemploormbasico.dao.CategoriaDao;
 import ldavip.exemploormbasico.dao.ProdutoDao;
 import ldavip.exemploormbasico.model.Categoria;
 import ldavip.exemploormbasico.model.Produto;
+import ldavip.exemploormbasico.util.Operacao;
 import ldavip.ormbasico.dao.Dao;
-import ldavip.ormbasico.query.Criterio;
-import ldavip.ormbasico.query.Criterios;
-import ldavip.ormbasico.query.Expressao;
-import ldavip.ormbasico.query.Join;
 import ldavip.ormbasico.query.Operador;
-import ldavip.ormbasico.query.Where;
 import ldavip.ormbasico.util.ConnectionFactory;
 
 /**
@@ -25,10 +21,6 @@ import ldavip.ormbasico.util.ConnectionFactory;
  * @author Luis Davi
  */
 public class TelaProdutos extends javax.swing.JInternalFrame {
-
-    private enum Operacao {
-        INSERIR, ALTERAR, CONSULTA
-    }
     
     private JFrame tela;
     private Operacao operacao;
@@ -80,7 +72,7 @@ public class TelaProdutos extends javax.swing.JInternalFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tabelaProdutos = new javax.swing.JTable();
+        tabela = new javax.swing.JTable();
         jToolBar1 = new javax.swing.JToolBar();
         btnNovo = new javax.swing.JButton();
         btnAlterar = new javax.swing.JButton();
@@ -334,7 +326,7 @@ public class TelaProdutos extends javax.swing.JInternalFrame {
         jPanel2.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createTitledBorder("Produtos"), javax.swing.BorderFactory.createEtchedBorder()));
         jPanel2.setLayout(new java.awt.BorderLayout());
 
-        tabelaProdutos.setModel(new javax.swing.table.DefaultTableModel(
+        tabela.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -342,7 +334,7 @@ public class TelaProdutos extends javax.swing.JInternalFrame {
 
             }
         ));
-        jScrollPane1.setViewportView(tabelaProdutos);
+        jScrollPane1.setViewportView(tabela);
 
         jPanel2.add(jScrollPane1, java.awt.BorderLayout.CENTER);
 
@@ -412,11 +404,7 @@ public class TelaProdutos extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNovoActionPerformed
-        limparDialog();
-        operacao = Operacao.INSERIR;
-        dialogNovo.setTitle("Novo produto");
-        dialogNovo.setVisible(true);
-        dialogNovo.setModal(true);
+        novo();
     }//GEN-LAST:event_btnNovoActionPerformed
 
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
@@ -430,21 +418,11 @@ public class TelaProdutos extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     private void btnAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlterarActionPerformed
-        if (tabelaProdutos.getSelectedRow() != -1) {
-            Produto p = ((TabelaProduto) tabelaProdutos.getModel()).getValor(tabelaProdutos.getSelectedRow());
-            alterar(p);
-        } else {
-            JOptionPane.showMessageDialog(tela, "Selecione um produto!", "Atenção", JOptionPane.WARNING_MESSAGE);
-        }
+        alterar();
     }//GEN-LAST:event_btnAlterarActionPerformed
 
     private void btnRemoverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoverActionPerformed
-        if (tabelaProdutos.getSelectedRow() != -1) {
-            Produto c = ((TabelaProduto) tabelaProdutos.getModel()).getValor(tabelaProdutos.getSelectedRow());
-            remove(c);
-        } else {
-            JOptionPane.showMessageDialog(tela, "Selecione um produto!", "Atenção", JOptionPane.WARNING_MESSAGE);
-        }
+        remover();
     }//GEN-LAST:event_btnRemoverActionPerformed
 
     private void btnFiltrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFiltrarActionPerformed
@@ -532,9 +510,9 @@ public class TelaProdutos extends javax.swing.JInternalFrame {
             ProdutoDao produtoDao = new ProdutoDao(conexao);
             List<Produto> lista = produtoDao.buscaTodos();
             // Preenche a tabela de produtos
-            tabelaProdutos.setModel(new TabelaProduto(lista));
-            ((TabelaProduto) tabelaProdutos.getModel()).fireTableDataChanged();
-            tabelaProdutos.validate();
+            tabela.setModel(new Tabela(lista));
+            ((Tabela) tabela.getModel()).fireTableDataChanged();
+            tabela.validate();
 
             if (nulo) {
                 conexao.close();
@@ -564,6 +542,14 @@ public class TelaProdutos extends javax.swing.JInternalFrame {
         txtDescricao.setText("");
         txtPrecoUnitario.setText("");
         txtCategoriaFiltro.setText("");
+    }
+    
+    private void novo() {
+        limparDialog();
+        operacao = Operacao.INSERIR;
+        dialogNovo.setTitle("Novo Produto");
+        dialogNovo.setVisible(true);
+        dialogNovo.setModal(true);
     }
 
     private void salvar() {
@@ -620,32 +606,42 @@ public class TelaProdutos extends javax.swing.JInternalFrame {
         }
     }
 
-    private void alterar(Produto p) {
-        preencherDialog(p);
-        operacao = Operacao.ALTERAR;
-        dialogNovo.setTitle("Alterar produto");
-        dialogNovo.setVisible(true);
-        dialogNovo.setModal(true);
+    private void alterar() {
+        if (tabela.getSelectedRow() != -1) {
+            Produto p = ((Tabela) tabela.getModel()).getValor(tabela.getSelectedRow());
+            preencherDialog(p);
+            operacao = Operacao.ALTERAR;
+            dialogNovo.setTitle("Alterar produto");
+            dialogNovo.setVisible(true);
+            dialogNovo.setModal(true);
+        } else {
+            JOptionPane.showMessageDialog(tela, "Selecione um produto!", "Atenção", JOptionPane.WARNING_MESSAGE);
+        }
     }
     
-    private void remove(Produto p) {
-        int resposta = JOptionPane.showConfirmDialog(tela,
-                "Tem certeza que deseja remove o ítem selecionado?",
-                "Confirma remoção",
-                JOptionPane.YES_NO_CANCEL_OPTION,
-                JOptionPane.QUESTION_MESSAGE);
+    private void remover() {
+        if (tabela.getSelectedRow() != -1) {
+            Produto p = ((Tabela) tabela.getModel()).getValor(tabela.getSelectedRow());
+            int resposta = JOptionPane.showConfirmDialog(tela,
+                    "Tem certeza que deseja remove o ítem selecionado?",
+                    "Confirma remoção",
+                    JOptionPane.YES_NO_CANCEL_OPTION,
+                    JOptionPane.QUESTION_MESSAGE);
 
-        if (resposta == JOptionPane.YES_OPTION) {
-            try (Connection conexao = ConnectionFactory.getConnection()) {
-                ProdutoDao dao = new ProdutoDao(conexao);
-                dao.remove(p);
+            if (resposta == JOptionPane.YES_OPTION) {
+                try (Connection conexao = ConnectionFactory.getConnection()) {
+                    ProdutoDao dao = new ProdutoDao(conexao);
+                    dao.remove(p);
 
-                JOptionPane.showMessageDialog(tela, "Produto removido com sucesso!", "Informação", JOptionPane.INFORMATION_MESSAGE);
-                carregaProdutos(conexao);
-            } catch (Exception ex) {
-                ex.printStackTrace();
-                JOptionPane.showMessageDialog(tela, ex.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(tela, "Produto removido com sucesso!", "Informação", JOptionPane.INFORMATION_MESSAGE);
+                    carregaProdutos(conexao);
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                    JOptionPane.showMessageDialog(tela, ex.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
+                }
             }
+        } else {
+            JOptionPane.showMessageDialog(tela, "Selecione um produto!", "Atenção", JOptionPane.WARNING_MESSAGE);
         }
     }
     
@@ -707,10 +703,10 @@ public class TelaProdutos extends javax.swing.JInternalFrame {
             
             List<Produto> lista = dao.toList();
             if (!lista.isEmpty()) {
-                // Preenche a tabela de produtos
-                tabelaProdutos.setModel(new TabelaProduto(lista));
-                ((TabelaProduto) tabelaProdutos.getModel()).fireTableDataChanged();
-                tabelaProdutos.validate();
+                // Preenche a tabela
+                tabela.setModel(new Tabela(lista));
+                ((Tabela) tabela.getModel()).fireTableDataChanged();
+                tabela.validate();
 //                dialogFiltro.dispose();
             } else {
                 JOptionPane.showMessageDialog(tela, "A consulta não retornou registros!", "Informação", JOptionPane.ERROR_MESSAGE);
@@ -722,11 +718,11 @@ public class TelaProdutos extends javax.swing.JInternalFrame {
         }
     }
 
-    class TabelaProduto extends AbstractTableModel {
+    class Tabela extends AbstractTableModel {
 
         private List<Produto> lista;
 
-        public TabelaProduto(List<Produto> lista) {
+        public Tabela(List<Produto> lista) {
             this.lista = lista;
         }
 
@@ -840,7 +836,7 @@ public class TelaProdutos extends javax.swing.JInternalFrame {
     private javax.swing.JToolBar jToolBar1;
     private javax.swing.JToolBar jToolBar2;
     private javax.swing.JToolBar jToolBar3;
-    private javax.swing.JTable tabelaProdutos;
+    private javax.swing.JTable tabela;
     private javax.swing.JTextField txtCategoriaFiltro;
     private javax.swing.JTextField txtCodigo;
     private javax.swing.JTextField txtCodigoFiltro;

@@ -1,5 +1,6 @@
 package ldavip.exemploormbasico.model;
 
+import java.util.Date;
 import java.util.Objects;
 import ldavip.ormbasico.annotation.AutoIncrement;
 import ldavip.ormbasico.annotation.Coluna;
@@ -36,6 +37,9 @@ public class Compra {
     
     @Coluna(nome = "valor_total")
     private double valorTotal;
+    
+    @Coluna(nome = "data_compra")
+    private Date dataCompra;
 
     public int getId() {
         return id;
@@ -75,6 +79,14 @@ public class Compra {
 
     public void setValorTotal(double valorTotal) {
         this.valorTotal = valorTotal;
+    }
+
+    public Date getDataCompra() {
+        return dataCompra;
+    }
+
+    public void setDataCompra(Date dataCompra) {
+        this.dataCompra = dataCompra;
     }
 
     @Override
