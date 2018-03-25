@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+    <entry key="url">jdbc:mysql://localhost/exemplo_orm_basico_db</entry>
+    <entry key="user">sa</entry>
+    <entry key="password">1234567</entry>
+    <entry key="pacote-dao">ldavip.exemploormbasico.dao</entry>
+</properties>
