@@ -13,7 +13,6 @@ import javax.swing.table.AbstractTableModel;
 import ldavip.exemploormbasico.dao.ClienteDao;
 import ldavip.exemploormbasico.dao.CompraDao;
 import ldavip.exemploormbasico.dao.ProdutoDao;
-import ldavip.exemploormbasico.model.Categoria;
 import ldavip.exemploormbasico.model.Cliente;
 import ldavip.exemploormbasico.model.Compra;
 import ldavip.exemploormbasico.model.Produto;
@@ -1087,67 +1086,66 @@ public class TelaCompras extends javax.swing.JInternalFrame {
 
             // compra
             if (idCompra != 0) {
-                dao.where(Compra.class, "id", Operador.IGUAL, idCompra);
+                dao.where("compra.id", Operador.IGUAL, idCompra);
             }
             
             if (dataInicialCompra != null) {
-                dao.where(Compra.class, "dataCompra", Operador.MAIOR_OU_IGUAL_QUE, dataInicialCompra);
+                dao.where("compra.dataCompra", Operador.MAIOR_OU_IGUAL_QUE, dataInicialCompra);
             }
             
             if (dataFinalCompra != null) {
-                dao.where(Compra.class, "dataCompra", Operador.MENOR_OU_IGUAL_QUE, dataFinalCompra);
+                dao.where("compra.dataCompra", Operador.MENOR_OU_IGUAL_QUE, dataFinalCompra);
             }
             
             if (qtdeMinimaCompra != 0) {
-                dao.where(Compra.class, "quantidade", Operador.MAIOR_OU_IGUAL_QUE, qtdeMinimaCompra);
+                dao.where("compra.quantidade", Operador.MAIOR_OU_IGUAL_QUE, qtdeMinimaCompra);
             }
             
             if (qtdeMaximaCompra != 0) {
-                dao.where(Compra.class, "quantidade", Operador.MENOR_OU_IGUAL_QUE, qtdeMaximaCompra);
+                dao.where("compra.quantidade", Operador.MENOR_OU_IGUAL_QUE, qtdeMaximaCompra);
             }
             
             if (valorMinimoCompra != 0) {
-                dao.where(Compra.class, "valorTotal", Operador.MAIOR_OU_IGUAL_QUE, valorMinimoCompra);
+                dao.where("compra.valorTotal", Operador.MAIOR_OU_IGUAL_QUE, valorMinimoCompra);
             }
             
             if (valorMaximoCompra != 0) {
-                dao.where(Compra.class, "valorTotal", Operador.MENOR_OU_IGUAL_QUE, valorMaximoCompra);
+                dao.where("compra.valorTotal", Operador.MENOR_OU_IGUAL_QUE, valorMaximoCompra);
             }
 
             // cliente
             if (idCliente != 0) {
-                dao.where(Cliente.class, "id", Operador.IGUAL, idCliente);
+                dao.where("compra.cliente.id", Operador.IGUAL, idCliente);
             }
             
             if (!nomeCliente.isEmpty()) {
-                dao.where(Cliente.class, "nome", Operador.SIMILAR, nomeCliente);
+                dao.where("compra.cliente.nome", Operador.SIMILAR, nomeCliente);
             }
 
             if (ativo != 0) {
                 ativo = ativo == 1 ? 1 : 0;
-                dao.where(Cliente.class, "ativo", Operador.IGUAL, ativo);
+                dao.where("compra.cliente.ativo", Operador.IGUAL, ativo);
             }
             
             // produto
             if (idProduto != 0) {
-                dao.where(Produto.class, "id", Operador.IGUAL, idProduto);
+                dao.where("compra.produto.id", Operador.IGUAL, idProduto);
             }
 
             if (!descricaoProduto.isEmpty()) {
-                dao.where(Produto.class, "descricao", Operador.SIMILAR, descricaoProduto);
+                dao.where("compra.produto.descricao", Operador.SIMILAR, descricaoProduto);
             }
 
             if (precoMinimoProduto != 0D) {
-                dao.where(Produto.class, "precoUnitario", Operador.MAIOR_OU_IGUAL_QUE, precoMinimoProduto);
+                dao.where("compra.produto.precoUnitario", Operador.MAIOR_OU_IGUAL_QUE, precoMinimoProduto);
             }
 
             if (precoMaximoProduto != 0D) {
-                dao.where(Produto.class, "precoUnitario", Operador.MENOR_OU_IGUAL_QUE, precoMaximoProduto);
+                dao.where("compra.produto.precoUnitario", Operador.MENOR_OU_IGUAL_QUE, precoMaximoProduto);
             }
 
             if (!categoriaProduto.isEmpty()) {
-                throw new UnsupportedOperationException("Não suportado ainda!");
-//                dao.where(Categoria.class, "descricao", Operador.SIMILAR, categoriaProduto);
+                dao.where("compra.produto.categoria.descricao", Operador.SIMILAR, categoriaProduto);
             }
 
             List<Compra> lista = dao.toList();

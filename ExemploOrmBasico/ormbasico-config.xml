@@ -5,4 +5,5 @@
     <entry key="user">nome_do_usuario</entry>
     <entry key="password">senha</entry>
     <entry key="pacote-dao">ldavip.exemploormbasico.dao</entry>
+    <entry key="pacote-model">ldavip.exemploormbasico.model</entry>
 </properties>
