@@ -483,7 +483,7 @@ public class TelaProdutos extends javax.swing.JInternalFrame {
 
             // Carrega categorias
             CategoriaDao categoriaDao = new CategoriaDao(conexao);
-            List<Categoria> categorias = categoriaDao.buscaTodos();
+            List<Categoria> categorias = categoriaDao.buscaLista().toList();
 
             // preenche o combobox de categorias
             comboCategoria.removeAllItems();
@@ -508,7 +508,7 @@ public class TelaProdutos extends javax.swing.JInternalFrame {
             }
             // Carrega produtos
             ProdutoDao produtoDao = new ProdutoDao(conexao);
-            List<Produto> lista = produtoDao.buscaTodos();
+            List<Produto> lista = produtoDao.buscaLista().toList();
             // Preenche a tabela de produtos
             tabela.setModel(new Tabela(lista));
             ((Tabela) tabela.getModel()).fireTableDataChanged();
@@ -549,7 +549,6 @@ public class TelaProdutos extends javax.swing.JInternalFrame {
         operacao = Operacao.INSERIR;
         dialogNovo.setTitle("Novo Produto");
         dialogNovo.setVisible(true);
-        dialogNovo.setModal(true);
     }
 
     private void salvar() {
@@ -613,7 +612,6 @@ public class TelaProdutos extends javax.swing.JInternalFrame {
             operacao = Operacao.ALTERAR;
             dialogNovo.setTitle("Alterar produto");
             dialogNovo.setVisible(true);
-            dialogNovo.setModal(true);
         } else {
             JOptionPane.showMessageDialog(tela, "Selecione um produto!", "Atenção", JOptionPane.WARNING_MESSAGE);
         }
@@ -682,23 +680,23 @@ public class TelaProdutos extends javax.swing.JInternalFrame {
             Dao dao = new ProdutoDao(conexao).buscaLista();
             
             if (id != 0) {
-                dao.where(Produto.class, "id", Operador.IGUAL, id);
+                dao.where("produto.id", Operador.IGUAL, id);
             }
 
             if (!descricao.isEmpty()) {
-                dao.where(Produto.class, "descricao", Operador.SIMILAR, descricao);
+                dao.where("produto.descricao", Operador.SIMILAR, descricao);
             }
 
             if (precoMinimo != 0D) {
-                dao.where(Produto.class, "precoUnitario", Operador.MAIOR_OU_IGUAL_QUE, precoMinimo);
+                dao.where("produto.precoUnitario", Operador.MAIOR_OU_IGUAL_QUE, precoMinimo);
             }
 
             if (precoMaximo != 0D) {
-                dao.where(Produto.class, "precoUnitario", Operador.MENOR_OU_IGUAL_QUE, precoMaximo);
+                dao.where("produto.precoUnitario", Operador.MENOR_OU_IGUAL_QUE, precoMaximo);
             }
 
             if (!categoria.isEmpty()) {
-                dao.where(Categoria.class, "descricao", Operador.SIMILAR, categoria);
+                dao.where("produto.categoria.descricao", Operador.SIMILAR, categoria);
             }
             
             List<Produto> lista = dao.toList();

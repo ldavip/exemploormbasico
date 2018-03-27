@@ -498,7 +498,7 @@ public class TelaClientes extends javax.swing.JInternalFrame {
         try (Connection conexao = ConnectionFactory.getConnection()) {
             // Carrega clientes
             ClienteDao dao = new ClienteDao(conexao);
-            List<Cliente> clientes = dao.buscaTodos();
+            List<Cliente> clientes = dao.buscaLista().toList();
             // Preenche a tabela de clientes
             tabela.setModel(new Tabela(clientes));
             ((Tabela) tabela.getModel()).fireTableDataChanged();
@@ -532,16 +532,16 @@ public class TelaClientes extends javax.swing.JInternalFrame {
             Dao dao = new ClienteDao(conexao).buscaLista();
 
             if (id != 0) {
-                dao.where(Cliente.class, "id", Operador.IGUAL, id);
+                dao.where("cliente.id", Operador.IGUAL, id);
             }
 
             if (!nome.isEmpty()) {
-                dao.where(Cliente.class, "nome", Operador.SIMILAR, nome);
+                dao.where("cliente.nome", Operador.SIMILAR, nome);
             }
 
             if (ativo != 0) {
                 ativo = ativo == 1 ? 1 : 0;
-                dao.where(Cliente.class, "ativo", Operador.IGUAL, ativo);
+                dao.where("cliente.ativo", Operador.IGUAL, ativo);
             }
             
             List<Cliente> lista = dao.toList();

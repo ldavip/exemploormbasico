@@ -1,5 +1,6 @@
 package ldavip.exemploormbasico.tela;
 
+import javax.swing.JInternalFrame;
 import javax.swing.JOptionPane;
 
 /**
@@ -93,12 +94,16 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     private void btnProdutosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProdutosActionPerformed
         try {
-            TelaProdutos tela = new TelaProdutos(this);
-            tela.setVisible(true);
-            desktop.add(tela);
+            if (verificaTela(TelaProdutos.class)) {
+                TelaProdutos tela = new TelaProdutos(this);
+                tela.setVisible(true);
+                desktop.add(tela);
 
-            tela.setSelected(true);
-            tela.setMaximum(true);
+                tela.setSelected(true);
+                tela.setMaximum(true);
+            } else {
+                selecionaTela(TelaProdutos.class);
+            }
         } catch (Exception e) {
             e.printStackTrace();
             JOptionPane.showMessageDialog(this, e.getMessage(), "Atenção", JOptionPane.WARNING_MESSAGE);
@@ -107,12 +112,16 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     private void btnCategoriasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCategoriasActionPerformed
         try {
-            TelaCategorias tela = new TelaCategorias(this);
-            tela.setVisible(true);
-            desktop.add(tela);
+            if (verificaTela(TelaCategorias.class)) {
+                TelaCategorias tela = new TelaCategorias(this);
+                tela.setVisible(true);
+                desktop.add(tela);
 
-            tela.setSelected(true);
-            tela.setMaximum(true);
+                tela.setSelected(true);
+                tela.setMaximum(true);
+            } else {
+                selecionaTela(TelaCategorias.class);
+            }
         } catch (Exception e) {
             e.printStackTrace();
             JOptionPane.showMessageDialog(this, e.getMessage(), "Atenção", JOptionPane.WARNING_MESSAGE);
@@ -121,12 +130,16 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     private void btnClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClientesActionPerformed
         try {
-            TelaClientes tela = new TelaClientes(this);
-            tela.setVisible(true);
-            desktop.add(tela);
+            if (verificaTela(TelaClientes.class)) {
+                TelaClientes tela = new TelaClientes(this);
+                tela.setVisible(true);
+                desktop.add(tela);
 
-            tela.setSelected(true);
-            tela.setMaximum(true);
+                tela.setSelected(true);
+                tela.setMaximum(true);
+            } else {
+                selecionaTela(TelaClientes.class);
+            }
         } catch (Exception e) {
             e.printStackTrace();
             JOptionPane.showMessageDialog(this, e.getMessage(), "Atenção", JOptionPane.WARNING_MESSAGE);
@@ -135,18 +148,51 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     private void btnComprasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprasActionPerformed
         try {
-            TelaCompras tela = new TelaCompras(this);
-            tela.setVisible(true);
-            desktop.add(tela);
+            if (verificaTela(TelaCompras.class)) {
+                TelaCompras tela = new TelaCompras(this);
+                tela.setVisible(true);
+                desktop.add(tela);
 
-            tela.setSelected(true);
-            tela.setMaximum(true);
+                tela.setSelected(true);
+                tela.setMaximum(true);
+            } else {
+                selecionaTela(TelaCompras.class);
+            }
         } catch (Exception e) {
             e.printStackTrace();
             JOptionPane.showMessageDialog(this, e.getMessage(), "Atenção", JOptionPane.WARNING_MESSAGE);
         }
     }//GEN-LAST:event_btnComprasActionPerformed
 
+    private boolean verificaTela(Class<?> classeTela) {
+        JInternalFrame[] frames = desktop.getAllFrames();
+        for (int i = 0; i < frames.length; i++) {
+            JInternalFrame frame = frames[i];
+            if (frame.getClass() == classeTela) {
+                return false;
+            } else if (frame.isClosed()) {
+                desktop.remove(frame);
+            }
+        }
+        return true;
+    }
+    
+    private void selecionaTela(Class<?> classeTela) throws Exception {
+        JInternalFrame tela = null;
+        for (JInternalFrame frame : desktop.getAllFrames()) {
+            if (frame.getClass() == classeTela) {
+                tela = frame;
+                break;
+            }
+        }
+        if (tela != null) {
+            tela.setVisible(true);
+            tela.setSelected(true);
+            tela.setMaximum(true);
+            tela.moveToFront();
+        }
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCategorias;
     private javax.swing.JButton btnClientes;

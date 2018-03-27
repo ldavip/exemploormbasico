@@ -8,9 +8,7 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.table.AbstractTableModel;
 import ldavip.exemploormbasico.dao.CategoriaDao;
-import ldavip.exemploormbasico.dao.ProdutoDao;
 import ldavip.exemploormbasico.model.Categoria;
-import ldavip.exemploormbasico.model.Produto;
 import ldavip.exemploormbasico.util.Operacao;
 import ldavip.ormbasico.dao.Dao;
 import ldavip.ormbasico.query.Operador;
@@ -498,11 +496,11 @@ public class TelaCategorias extends javax.swing.JInternalFrame {
             Dao dao = new CategoriaDao(conexao).buscaLista();
 
             if (id != 0) {
-                dao.where(Categoria.class, "id", Operador.IGUAL, id);
+                dao.where("categoria.id", Operador.IGUAL, id);
             }
 
             if (!descricao.isEmpty()) {
-                dao.where(Categoria.class, "descricao", Operador.SIMILAR, descricao);
+                dao.where("categoria.descricao", Operador.SIMILAR, descricao);
             }
 
             List<Categoria> lista = dao.toList();

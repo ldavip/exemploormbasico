@@ -766,7 +766,7 @@ public class TelaCompras extends javax.swing.JInternalFrame {
     private void carregaClientes(final Connection conexao) throws Exception {
         // Carrega clientes
         ClienteDao clienteDao = new ClienteDao(conexao);
-        List<Cliente> clientes = clienteDao.buscaTodos();
+        List<Cliente> clientes = clienteDao.buscaLista().toList();
         
         // preenche o combobox de clientes
         comboCliente.removeAllItems();
@@ -779,7 +779,7 @@ public class TelaCompras extends javax.swing.JInternalFrame {
     private void carregaProdutos(Connection conexao) throws Exception {
         // Carrega produtos
         ProdutoDao dao = new ProdutoDao(conexao);
-        List<Produto> produtos = dao.buscaTodos();
+        List<Produto> produtos = dao.buscaLista().toList();
 
         // preenche o combobox de produtos
         comboProduto.removeAllItems();
@@ -798,7 +798,7 @@ public class TelaCompras extends javax.swing.JInternalFrame {
             }
             // Carrega compras
             CompraDao dao = new CompraDao(conexao);
-            List<Compra> lista = dao.buscaTodos();
+            List<Compra> lista = dao.buscaLista().toList();
             // Preenche a tabela de compras
             tabela.setModel(new Tabela(lista));
             ((Tabela) tabela.getModel()).fireTableDataChanged();
@@ -1147,7 +1147,7 @@ public class TelaCompras extends javax.swing.JInternalFrame {
             if (!categoriaProduto.isEmpty()) {
                 dao.where("compra.produto.categoria.descricao", Operador.SIMILAR, categoriaProduto);
             }
-
+            
             List<Compra> lista = dao.toList();
             if (!lista.isEmpty()) {
                 // Preenche a tabela
@@ -1180,7 +1180,7 @@ public class TelaCompras extends javax.swing.JInternalFrame {
 
         @Override
         public int getColumnCount() {
-            return 5;
+            return 6;
         }
 
         @Override
@@ -1190,20 +1190,24 @@ public class TelaCompras extends javax.swing.JInternalFrame {
                 case 0:
                     valor = "ID";
                     break;
-
+                    
                 case 1:
-                    valor = "Cliente";
+                    valor = "Data";
                     break;
 
                 case 2:
-                    valor = "Produto";
+                    valor = "Cliente";
                     break;
 
                 case 3:
-                    valor = "Quantidade";
+                    valor = "Produto";
                     break;
 
                 case 4:
+                    valor = "Quantidade";
+                    break;
+
+                case 5:
                     valor = "Valor Total";
                     break;
 
@@ -1221,20 +1225,28 @@ public class TelaCompras extends javax.swing.JInternalFrame {
                 case 0:
                     valor = c.getId();
                     break;
-
+                    
                 case 1:
-                    valor = c.getCliente().getNome();
+                    try {
+                        valor = new SimpleDateFormat("dd/MM/yyyy").format(c.getDataCompra());
+                    } catch (Exception e) {
+                        valor = "";
+                    }
                     break;
 
                 case 2:
-                    valor = c.getProduto().getDescricao();
+                    valor = c.getCliente().getNome();
                     break;
 
                 case 3:
-                    valor = c.getQuantidade();
+                    valor = c.getProduto().getDescricao();
                     break;
 
                 case 4:
+                    valor = c.getQuantidade();
+                    break;
+
+                case 5:
                     valor = c.getValorTotal();
                     break;
 

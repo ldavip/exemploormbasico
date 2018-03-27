@@ -682,9 +682,6 @@
           <SubComponents>
             <Component class="javax.swing.JButton" name="btnNovo">
               <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="/home/dev/Documents/projects/java/ExemploOrmBasico/resources/icon/16/add_16.png"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Novo"/>
                 <Property name="focusable" type="boolean" value="false"/>
                 <Property name="horizontalTextPosition" type="int" value="4"/>
@@ -699,9 +696,6 @@
             </Component>
             <Component class="javax.swing.JButton" name="btnAlterar">
               <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="/home/dev/Documents/projects/java/ExemploOrmBasico/resources/icon/16/edit_16.png"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Alterar"/>
                 <Property name="focusable" type="boolean" value="false"/>
                 <Property name="horizontalTextPosition" type="int" value="4"/>
@@ -719,9 +713,6 @@
             </Component>
             <Component class="javax.swing.JButton" name="btnRemover">
               <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="/home/dev/Documents/projects/java/ExemploOrmBasico/resources/icon/16/remove_16.png"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Remover"/>
                 <Property name="focusable" type="boolean" value="false"/>
                 <Property name="horizontalTextPosition" type="int" value="4"/>
@@ -736,9 +727,6 @@
             </Component>
             <Component class="javax.swing.JButton" name="btnFiltrar">
               <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="/home/dev/Documents/projects/java/ExemploOrmBasico/resources/icon/16/search_16.png"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Filtrar"/>
                 <Property name="focusable" type="boolean" value="false"/>
                 <Property name="horizontalTextPosition" type="int" value="4"/>
