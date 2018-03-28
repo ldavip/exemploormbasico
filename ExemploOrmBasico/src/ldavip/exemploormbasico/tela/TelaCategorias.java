@@ -6,10 +6,10 @@ import java.sql.Connection;
 import java.util.List;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-import javax.swing.table.AbstractTableModel;
 import ldavip.exemploormbasico.dao.CategoriaDao;
 import ldavip.exemploormbasico.model.Categoria;
 import ldavip.exemploormbasico.util.Operacao;
+import ldavip.exemploormbasico.util.TabelaBase;
 import ldavip.ormbasico.dao.Dao;
 import ldavip.ormbasico.query.Operador;
 import ldavip.ormbasico.util.ConnectionFactory;
@@ -520,17 +520,10 @@ public class TelaCategorias extends javax.swing.JInternalFrame {
         }
     }
 
-    class Tabela extends AbstractTableModel {
-
-        private List<Categoria> lista;
+    class Tabela extends TabelaBase<Categoria> {
 
         public Tabela(List<Categoria> lista) {
-            this.lista = lista;
-        }
-
-        @Override
-        public int getRowCount() {
-            return lista.size();
+            super(lista);
         }
 
         @Override
@@ -573,18 +566,6 @@ public class TelaCategorias extends javax.swing.JInternalFrame {
                     valor = "";
             }
             return valor;
-        }
-
-        public Categoria getValor(int linha) {
-            return lista.get(linha);
-        }
-
-        public void setLista(List<Categoria> lista) {
-            this.lista = lista;
-        }
-
-        public List<Categoria> getLista() {
-            return lista;
         }
     }
 

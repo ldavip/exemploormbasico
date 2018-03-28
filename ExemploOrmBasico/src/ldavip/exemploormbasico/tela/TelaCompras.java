@@ -9,7 +9,6 @@ import java.util.Date;
 import java.util.List;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-import javax.swing.table.AbstractTableModel;
 import ldavip.exemploormbasico.dao.ClienteDao;
 import ldavip.exemploormbasico.dao.CompraDao;
 import ldavip.exemploormbasico.dao.ProdutoDao;
@@ -17,6 +16,7 @@ import ldavip.exemploormbasico.model.Cliente;
 import ldavip.exemploormbasico.model.Compra;
 import ldavip.exemploormbasico.model.Produto;
 import ldavip.exemploormbasico.util.Operacao;
+import ldavip.exemploormbasico.util.TabelaBase;
 import ldavip.ormbasico.dao.Dao;
 import ldavip.ormbasico.query.Operador;
 import ldavip.ormbasico.util.ConnectionFactory;
@@ -118,6 +118,7 @@ public class TelaCompras extends javax.swing.JInternalFrame {
         btnAlterar = new javax.swing.JButton();
         btnRemover = new javax.swing.JButton();
         btnFiltrar = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         jPanel8.setLayout(new java.awt.BorderLayout());
 
@@ -576,7 +577,6 @@ public class TelaCompras extends javax.swing.JInternalFrame {
 
         jToolBar3.setRollover(true);
 
-        btnNovo.setIcon(new javax.swing.ImageIcon("/home/dev/Documents/projects/java/ExemploOrmBasico/resources/icon/16/add_16.png")); // NOI18N
         btnNovo.setText("Novo");
         btnNovo.setFocusable(false);
         btnNovo.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
@@ -589,7 +589,6 @@ public class TelaCompras extends javax.swing.JInternalFrame {
         });
         jToolBar3.add(btnNovo);
 
-        btnAlterar.setIcon(new javax.swing.ImageIcon("/home/dev/Documents/projects/java/ExemploOrmBasico/resources/icon/16/edit_16.png")); // NOI18N
         btnAlterar.setText("Alterar");
         btnAlterar.setFocusable(false);
         btnAlterar.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
@@ -603,7 +602,6 @@ public class TelaCompras extends javax.swing.JInternalFrame {
         });
         jToolBar3.add(btnAlterar);
 
-        btnRemover.setIcon(new javax.swing.ImageIcon("/home/dev/Documents/projects/java/ExemploOrmBasico/resources/icon/16/remove_16.png")); // NOI18N
         btnRemover.setText("Remover");
         btnRemover.setFocusable(false);
         btnRemover.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
@@ -616,7 +614,6 @@ public class TelaCompras extends javax.swing.JInternalFrame {
         });
         jToolBar3.add(btnRemover);
 
-        btnFiltrar.setIcon(new javax.swing.ImageIcon("/home/dev/Documents/projects/java/ExemploOrmBasico/resources/icon/16/search_16.png")); // NOI18N
         btnFiltrar.setText("Filtrar");
         btnFiltrar.setFocusable(false);
         btnFiltrar.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
@@ -629,6 +626,9 @@ public class TelaCompras extends javax.swing.JInternalFrame {
             }
         });
         jToolBar3.add(btnFiltrar);
+
+        jLabel1.setText("jLabel1");
+        jToolBar3.add(jLabel1);
 
         jPanel1.add(jToolBar3, java.awt.BorderLayout.PAGE_START);
 
@@ -699,27 +699,27 @@ public class TelaCompras extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnCancelarFiltroActionPerformed
 
     private void txtCodigoClienteFiltroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCodigoClienteFiltroActionPerformed
-        // TODO add your handling code here:
+        btnFiltrarConsulta.doClick();
     }//GEN-LAST:event_txtCodigoClienteFiltroActionPerformed
 
     private void txtNomeClienteFiltroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeClienteFiltroActionPerformed
-        // TODO add your handling code here:
+        btnFiltrarConsulta.doClick();
     }//GEN-LAST:event_txtNomeClienteFiltroActionPerformed
 
     private void txtCodigoProdutoFiltroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCodigoProdutoFiltroActionPerformed
-        
+        btnFiltrarConsulta.doClick();
     }//GEN-LAST:event_txtCodigoProdutoFiltroActionPerformed
 
     private void txtDescricaoProdutoFiltroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDescricaoProdutoFiltroActionPerformed
-        
+        btnFiltrarConsulta.doClick();
     }//GEN-LAST:event_txtDescricaoProdutoFiltroActionPerformed
 
     private void txtPrecoUnitarioMinimoProdutoFiltroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPrecoUnitarioMinimoProdutoFiltroActionPerformed
-        
+        btnFiltrarConsulta.doClick();
     }//GEN-LAST:event_txtPrecoUnitarioMinimoProdutoFiltroActionPerformed
 
     private void txtPrecoUnitarioMaximoProdutoFiltroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPrecoUnitarioMaximoProdutoFiltroActionPerformed
-        // TODO add your handling code here:
+        btnFiltrarConsulta.doClick();
     }//GEN-LAST:event_txtPrecoUnitarioMaximoProdutoFiltroActionPerformed
 
     private void txtCategoriaProdutoFiltroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCategoriaProdutoFiltroActionPerformed
@@ -727,23 +727,23 @@ public class TelaCompras extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_txtCategoriaProdutoFiltroActionPerformed
 
     private void txtCodigoCompraFiltroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCodigoCompraFiltroActionPerformed
-        // TODO add your handling code here:
+        btnFiltrarConsulta.doClick();
     }//GEN-LAST:event_txtCodigoCompraFiltroActionPerformed
 
     private void txtQuantidadeMinimaCompraFiltroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtQuantidadeMinimaCompraFiltroActionPerformed
-        // TODO add your handling code here:
+        btnFiltrarConsulta.doClick();
     }//GEN-LAST:event_txtQuantidadeMinimaCompraFiltroActionPerformed
 
     private void txtQuantidadeMaximaCompraFiltroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtQuantidadeMaximaCompraFiltroActionPerformed
-        // TODO add your handling code here:
+        btnFiltrarConsulta.doClick();
     }//GEN-LAST:event_txtQuantidadeMaximaCompraFiltroActionPerformed
 
     private void txtValorMinimoCompraFiltroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtValorMinimoCompraFiltroActionPerformed
-        // TODO add your handling code here:
+        btnFiltrarConsulta.doClick();
     }//GEN-LAST:event_txtValorMinimoCompraFiltroActionPerformed
 
     private void txtValorMaximoCompraFiltroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtValorMaximoCompraFiltroActionPerformed
-        // TODO add your handling code here:
+        btnFiltrarConsulta.doClick();
     }//GEN-LAST:event_txtValorMaximoCompraFiltroActionPerformed
 
     private void inicializar() {
@@ -1165,17 +1165,10 @@ public class TelaCompras extends javax.swing.JInternalFrame {
         }
     }
 
-    class Tabela extends AbstractTableModel {
+    class Tabela extends TabelaBase<Compra> {
 
-        private List<Compra> lista;
-
-        public Tabela(List<Compra> lista) {
-            this.lista = lista;
-        }
-
-        @Override
-        public int getRowCount() {
-            return lista.size();
+        public Tabela(List<Compra> valores) {
+            super(valores);
         }
 
         @Override
@@ -1255,18 +1248,6 @@ public class TelaCompras extends javax.swing.JInternalFrame {
             }
             return valor;
         }
-
-        public Compra getValor(int linha) {
-            return lista.get(linha);
-        }
-
-        public void setLista(List<Compra> lista) {
-            this.lista = lista;
-        }
-
-        public List<Compra> getLista() {
-            return lista;
-        }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -1283,6 +1264,7 @@ public class TelaCompras extends javax.swing.JInternalFrame {
     private javax.swing.JComboBox<String> comboStatusClienteFiltro;
     private javax.swing.JDialog dialogFiltro;
     private javax.swing.JDialog dialogNovo;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
