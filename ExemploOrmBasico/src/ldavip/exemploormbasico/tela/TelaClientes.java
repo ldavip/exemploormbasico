@@ -5,10 +5,11 @@ import java.awt.Toolkit;
 import java.util.List;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-import javax.swing.table.AbstractTableModel;
 import ldavip.exemploormbasico.dao.ClienteDao;
 import ldavip.exemploormbasico.model.Cliente;
 import ldavip.exemploormbasico.util.Operacao;
+import ldavip.exemploormbasico.util.TabelaBase;
+import ldavip.ormbasico.dao.Dao;
 import ldavip.ormbasico.query.Operador;
 
 /**
@@ -554,17 +555,10 @@ public class TelaClientes extends javax.swing.JInternalFrame {
         }
     }
 
-    class Tabela extends AbstractTableModel {
-
-        private List<Cliente> lista;
+    class Tabela extends TabelaBase<Cliente> {
 
         public Tabela(List<Cliente> lista) {
-            this.lista = lista;
-        }
-
-        @Override
-        public int getRowCount() {
-            return lista.size();
+            super(lista);
         }
 
         @Override
@@ -623,18 +617,6 @@ public class TelaClientes extends javax.swing.JInternalFrame {
                     valor = "";
             }
             return valor;
-        }
-
-        public Cliente getValor(int linha) {
-            return lista.get(linha);
-        }
-
-        public void setLista(List<Cliente> lista) {
-            this.lista = lista;
-        }
-
-        public List<Cliente> getLista() {
-            return lista;
         }
     }
 
