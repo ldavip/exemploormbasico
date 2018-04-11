@@ -10,6 +10,9 @@ import ldavip.ormbasico.dao.Dao;
  */
 public class CategoriaDao extends Dao<Categoria> {
 
+    public CategoriaDao() {
+    }
+
     public CategoriaDao(Connection conexao) {
         super(conexao);
     }

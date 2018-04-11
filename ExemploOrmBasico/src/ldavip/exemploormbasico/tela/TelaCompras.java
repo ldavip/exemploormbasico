@@ -29,6 +29,7 @@ public class TelaCompras extends javax.swing.JInternalFrame {
     
     private JFrame tela;
     private Operacao operacao;
+    private CompraDao dao;
 
     public TelaCompras(JFrame tela) {
         initComponents();
@@ -748,14 +749,15 @@ public class TelaCompras extends javax.swing.JInternalFrame {
 
     private void inicializar() {
 
+        dao = new CompraDao();
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         dialogNovo.setBounds((int) (screenSize.getWidth() - 360) / 2, (int) (screenSize.getHeight() - 430) / 2, 360, 430);
         dialogFiltro.setBounds((int) (screenSize.getWidth() - 780) / 2, (int) (screenSize.getHeight() - 650) / 2, 780, 650);
 
-        try (Connection conexao = ConnectionFactory.getConnection()) {
-            carregaCompras(conexao);
-            carregaClientes(conexao);
-            carregaProdutos(conexao);
+        try {
+            carregaCompras();
+            carregaClientes();
+            carregaProdutos();
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -763,9 +765,9 @@ public class TelaCompras extends javax.swing.JInternalFrame {
         }
     }
 
-    private void carregaClientes(final Connection conexao) throws Exception {
+    private void carregaClientes() throws Exception {
         // Carrega clientes
-        ClienteDao clienteDao = new ClienteDao(conexao);
+        ClienteDao clienteDao = new ClienteDao();
         List<Cliente> clientes = clienteDao.buscaLista().toList();
         
         // preenche o combobox de clientes
@@ -776,10 +778,10 @@ public class TelaCompras extends javax.swing.JInternalFrame {
         comboCliente.validate();
     }
     
-    private void carregaProdutos(Connection conexao) throws Exception {
+    private void carregaProdutos() throws Exception {
         // Carrega produtos
-        ProdutoDao dao = new ProdutoDao(conexao);
-        List<Produto> produtos = dao.buscaLista().toList();
+        ProdutoDao produtoDao = new ProdutoDao();
+        List<Produto> produtos = produtoDao.buscaLista().toList();
 
         // preenche o combobox de produtos
         comboProduto.removeAllItems();
@@ -789,24 +791,16 @@ public class TelaCompras extends javax.swing.JInternalFrame {
         comboProduto.validate();
     }
     
-    private void carregaCompras(Connection conexao) {
-        boolean nulo = false;
+    private void carregaCompras() {
         try {
-            if (conexao == null) {
-                nulo = true;
-                conexao = ConnectionFactory.getConnection();
-            }
             // Carrega compras
-            CompraDao dao = new CompraDao(conexao);
-            List<Compra> lista = dao.buscaLista().toList();
+            CompraDao compraDao = new CompraDao();
+            List<Compra> lista = compraDao.buscaLista().toList();
             // Preenche a tabela de compras
             tabela.setModel(new Tabela(lista));
             ((Tabela) tabela.getModel()).fireTableDataChanged();
             tabela.validate();
             
-            if (nulo) {
-                conexao.close();
-            }
         } catch (Exception ex) {
             ex.printStackTrace();
             JOptionPane.showMessageDialog(tela, ex.getMessage(), "Atenção", JOptionPane.WARNING_MESSAGE);
@@ -885,9 +879,7 @@ public class TelaCompras extends javax.swing.JInternalFrame {
         }
 
 
-        try (Connection conexao = ConnectionFactory.getConnection()) {
-            CompraDao dao = new CompraDao(conexao);
-            
+        try {
             String msg;
             if (operacao == Operacao.ALTERAR) {
                 dao.altera(compra);
@@ -899,7 +891,7 @@ public class TelaCompras extends javax.swing.JInternalFrame {
 
             JOptionPane.showMessageDialog(tela, msg, "Informação", JOptionPane.INFORMATION_MESSAGE);
             dialogNovo.dispose();
-            carregaCompras(conexao);
+            carregaCompras();
         } catch (Exception ex) {
             ex.printStackTrace();
             JOptionPane.showMessageDialog(tela, ex.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
@@ -929,12 +921,11 @@ public class TelaCompras extends javax.swing.JInternalFrame {
                     JOptionPane.QUESTION_MESSAGE);
 
             if (resposta == JOptionPane.YES_OPTION) {
-                try (Connection conexao = ConnectionFactory.getConnection()) {
-                    CompraDao dao = new CompraDao(conexao);
+                try {
                     dao.remove(c);
 
                     JOptionPane.showMessageDialog(tela, "Compra removida com sucesso!", "Informação", JOptionPane.INFORMATION_MESSAGE);
-                    carregaCompras(conexao);
+                    carregaCompras();
                 } catch (Exception ex) {
                     ex.printStackTrace();
                     JOptionPane.showMessageDialog(tela, ex.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
@@ -1081,8 +1072,8 @@ public class TelaCompras extends javax.swing.JInternalFrame {
 
         String categoriaProduto = txtCategoriaProdutoFiltro.getText();
 
-        try (Connection conexao = ConnectionFactory.getConnection()) {
-            Dao dao = new CompraDao(conexao).buscaLista();
+        try {
+            dao.buscaLista();
 
             // compra
             if (idCompra != 0) {

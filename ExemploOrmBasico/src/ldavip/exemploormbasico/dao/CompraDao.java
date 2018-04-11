@@ -10,6 +10,9 @@ import ldavip.ormbasico.dao.Dao;
  */
 public class CompraDao extends Dao<Compra> {
 
+    public CompraDao() {
+    }
+
     public CompraDao(Connection conexao) {
         super(conexao);
     }

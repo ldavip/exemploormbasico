@@ -2,7 +2,6 @@ package ldavip.exemploormbasico.tela;
 
 import java.awt.Dimension;
 import java.awt.Toolkit;
-import java.sql.Connection;
 import java.util.List;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -10,9 +9,7 @@ import javax.swing.table.AbstractTableModel;
 import ldavip.exemploormbasico.dao.CategoriaDao;
 import ldavip.exemploormbasico.model.Categoria;
 import ldavip.exemploormbasico.util.Operacao;
-import ldavip.ormbasico.dao.Dao;
 import ldavip.ormbasico.query.Operador;
-import ldavip.ormbasico.util.ConnectionFactory;
 
 /**
  *
@@ -22,6 +19,7 @@ public class TelaCategorias extends javax.swing.JInternalFrame {
     
     private JFrame tela;
     private Operacao operacao;
+    private CategoriaDao dao;
 
     public TelaCategorias(JFrame tela) {
         initComponents();
@@ -357,6 +355,7 @@ public class TelaCategorias extends javax.swing.JInternalFrame {
 
     private void inicializar() {
 
+        this.dao = new CategoriaDao();
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         dialogNovo.setBounds((int) (screenSize.getWidth() - 360) / 2, (int) (screenSize.getHeight() - 350) / 2, 360, 350);
         dialogFiltro.setBounds((int) (screenSize.getWidth() - 360) / 2, (int) (screenSize.getHeight() - 250) / 2, 360, 250);
@@ -402,10 +401,8 @@ public class TelaCategorias extends javax.swing.JInternalFrame {
             return;
         }
 
-        try (Connection conexao = ConnectionFactory.getConnection()) {
-            CategoriaDao dao = new CategoriaDao(conexao);
+        try {
             String msg;
-            
             if (operacao == Operacao.ALTERAR) {
                 dao.altera(categoria);
                 msg = "Categoria alterada com sucesso!";
@@ -446,10 +443,9 @@ public class TelaCategorias extends javax.swing.JInternalFrame {
                     JOptionPane.QUESTION_MESSAGE);
 
             if (resposta == JOptionPane.YES_OPTION) {
-                try (Connection conexao = ConnectionFactory.getConnection()) {
-                    CategoriaDao dao = new CategoriaDao(conexao);
+                try {
                     dao.remove(c);
-
+                    
                     JOptionPane.showMessageDialog(tela, "Categoria removida com sucesso!", "Informação", JOptionPane.INFORMATION_MESSAGE);
 
                     carregaCategorias();
@@ -464,10 +460,9 @@ public class TelaCategorias extends javax.swing.JInternalFrame {
     }
 
     private void carregaCategorias() {
-        try (Connection conexao = ConnectionFactory.getConnection()) {
+        try {
             // Carrega categorias
-            CategoriaDao categoriaDao = new CategoriaDao(conexao);
-            List<Categoria> categorias = categoriaDao.buscaLista().toList();
+            List<Categoria> categorias = dao.buscaLista().toList();
             // Preenche a tabela de categorias
             tabela.setModel(new Tabela(categorias));
             ((Tabela) tabela.getModel()).fireTableDataChanged();
@@ -492,8 +487,8 @@ public class TelaCategorias extends javax.swing.JInternalFrame {
 
         String descricao = txtDescricaoFiltro.getText();
 
-        try (Connection conexao = ConnectionFactory.getConnection()) {
-            Dao dao = new CategoriaDao(conexao).buscaLista();
+        try {
+            dao.buscaLista();
 
             if (id != 0) {
                 dao.where("categoria.id", Operador.IGUAL, id);

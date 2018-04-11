@@ -24,6 +24,7 @@ public class TelaProdutos extends javax.swing.JInternalFrame {
     
     private JFrame tela;
     private Operacao operacao;
+    private ProdutoDao dao;
 
     public TelaProdutos(JFrame tela) {
         initComponents();
@@ -474,15 +475,16 @@ public class TelaProdutos extends javax.swing.JInternalFrame {
 
     private void inicializar() {
 
+        dao = new ProdutoDao();
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         dialogNovo.setBounds((int) (screenSize.getWidth() - 360) / 2, (int) (screenSize.getHeight() - 350) / 2, 360, 350);
         dialogFiltro.setBounds((int) (screenSize.getWidth() - 360) / 2, (int) (screenSize.getHeight() - 350) / 2, 360, 350);
 
-        try (Connection conexao = ConnectionFactory.getConnection()) {
-            carregaProdutos(conexao);
+        try {
+            carregaProdutos();
 
             // Carrega categorias
-            CategoriaDao categoriaDao = new CategoriaDao(conexao);
+            CategoriaDao categoriaDao = new CategoriaDao();
             List<Categoria> categorias = categoriaDao.buscaLista().toList();
 
             // preenche o combobox de categorias
@@ -498,25 +500,17 @@ public class TelaProdutos extends javax.swing.JInternalFrame {
         }
     }
     
-    private void carregaProdutos(Connection conexao) {
-        boolean nulo = false;
+    private void carregaProdutos() {
 
         try {
-            if (conexao == null) {
-                nulo = true;
-                conexao = ConnectionFactory.getConnection();
-            }
             // Carrega produtos
-            ProdutoDao produtoDao = new ProdutoDao(conexao);
+            ProdutoDao produtoDao = new ProdutoDao();
             List<Produto> lista = produtoDao.buscaLista().toList();
             // Preenche a tabela de produtos
             tabela.setModel(new Tabela(lista));
             ((Tabela) tabela.getModel()).fireTableDataChanged();
             tabela.validate();
 
-            if (nulo) {
-                conexao.close();
-            }
         } catch (Exception ex) {
             ex.printStackTrace();
             JOptionPane.showMessageDialog(tela, ex.getMessage(), "Atenção", JOptionPane.WARNING_MESSAGE);
@@ -584,9 +578,7 @@ public class TelaProdutos extends javax.swing.JInternalFrame {
             return;
         }
 
-        try (Connection conexao = ConnectionFactory.getConnection()) {
-            ProdutoDao dao = new ProdutoDao(conexao);
-            
+        try {
             String msg;
             if (operacao == Operacao.ALTERAR) {
                 dao.altera(produto);
@@ -598,7 +590,7 @@ public class TelaProdutos extends javax.swing.JInternalFrame {
 
             JOptionPane.showMessageDialog(tela, msg, "Informação", JOptionPane.INFORMATION_MESSAGE);
             dialogNovo.dispose();
-            carregaProdutos(conexao);
+            carregaProdutos();
         } catch (Exception ex) {
             ex.printStackTrace();
             JOptionPane.showMessageDialog(tela, ex.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
@@ -627,12 +619,11 @@ public class TelaProdutos extends javax.swing.JInternalFrame {
                     JOptionPane.QUESTION_MESSAGE);
 
             if (resposta == JOptionPane.YES_OPTION) {
-                try (Connection conexao = ConnectionFactory.getConnection()) {
-                    ProdutoDao dao = new ProdutoDao(conexao);
+                try {
                     dao.remove(p);
 
                     JOptionPane.showMessageDialog(tela, "Produto removido com sucesso!", "Informação", JOptionPane.INFORMATION_MESSAGE);
-                    carregaProdutos(conexao);
+                    carregaProdutos();
                 } catch (Exception ex) {
                     ex.printStackTrace();
                     JOptionPane.showMessageDialog(tela, ex.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
@@ -676,8 +667,8 @@ public class TelaProdutos extends javax.swing.JInternalFrame {
         
         String categoria = txtCategoriaFiltro.getText();
         
-        try (Connection conexao = ConnectionFactory.getConnection()) {
-            Dao dao = new ProdutoDao(conexao).buscaLista();
+        try {
+            dao.buscaLista();
             
             if (id != 0) {
                 dao.where("produto.id", Operador.IGUAL, id);

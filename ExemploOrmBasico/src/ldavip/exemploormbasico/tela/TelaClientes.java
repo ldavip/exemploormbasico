@@ -2,7 +2,6 @@ package ldavip.exemploormbasico.tela;
 
 import java.awt.Dimension;
 import java.awt.Toolkit;
-import java.sql.Connection;
 import java.util.List;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -10,9 +9,7 @@ import javax.swing.table.AbstractTableModel;
 import ldavip.exemploormbasico.dao.ClienteDao;
 import ldavip.exemploormbasico.model.Cliente;
 import ldavip.exemploormbasico.util.Operacao;
-import ldavip.ormbasico.dao.Dao;
 import ldavip.ormbasico.query.Operador;
-import ldavip.ormbasico.util.ConnectionFactory;
 
 /**
  *
@@ -22,6 +19,7 @@ public class TelaClientes extends javax.swing.JInternalFrame {
     
     private JFrame tela;
     private Operacao operacao;
+    private ClienteDao dao;
 
     public TelaClientes(JFrame tela) {
         initComponents();
@@ -379,7 +377,8 @@ public class TelaClientes extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnFiltrarActionPerformed
 
     private void inicializar() {
-
+        
+        dao = new ClienteDao();
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         dialogNovo.setBounds((int) (screenSize.getWidth() - 360) / 2, (int) (screenSize.getHeight() - 350) / 2, 360, 350);
         dialogFiltro.setBounds((int) (screenSize.getWidth() - 360) / 2, (int) (screenSize.getHeight() - 350) / 2, 360, 350);
@@ -410,7 +409,6 @@ public class TelaClientes extends javax.swing.JInternalFrame {
         operacao = Operacao.INSERIR;
         dialogNovo.setTitle("Novo Cliente");
         dialogNovo.setVisible(true);
-        dialogNovo.setModal(true);
     }
 
     private void salvar() {
@@ -431,10 +429,8 @@ public class TelaClientes extends javax.swing.JInternalFrame {
         
         cliente.setAtivo(checkAtivo.isSelected());
 
-        try (Connection conexao = ConnectionFactory.getConnection()) {
-            ClienteDao dao = new ClienteDao(conexao);
+        try {
             String msg;
-            
             if (operacao == Operacao.ALTERAR) {
                 dao.altera(cliente);
                 msg = "Cliente alterado com sucesso!";
@@ -460,7 +456,6 @@ public class TelaClientes extends javax.swing.JInternalFrame {
             operacao = Operacao.ALTERAR;
             dialogNovo.setTitle("Alterar Cliente");
             dialogNovo.setVisible(true);
-            dialogNovo.setModal(true);
         } else {
             JOptionPane.showMessageDialog(tela, "Selecione um cliente!", "Atenção", JOptionPane.WARNING_MESSAGE);
         }
@@ -477,8 +472,7 @@ public class TelaClientes extends javax.swing.JInternalFrame {
                     JOptionPane.QUESTION_MESSAGE);
 
             if (resposta == JOptionPane.YES_OPTION) {
-                try (Connection conexao = ConnectionFactory.getConnection()) {
-                    ClienteDao dao = new ClienteDao(conexao);
+                try {
                     dao.remove(c);
 
                     JOptionPane.showMessageDialog(tela, "Cliente removido com sucesso!", "Informação", JOptionPane.INFORMATION_MESSAGE);
@@ -495,9 +489,8 @@ public class TelaClientes extends javax.swing.JInternalFrame {
     }
 
     private void carregaClientes() {
-        try (Connection conexao = ConnectionFactory.getConnection()) {
+        try {
             // Carrega clientes
-            ClienteDao dao = new ClienteDao(conexao);
             List<Cliente> clientes = dao.buscaLista().toList();
             // Preenche a tabela de clientes
             tabela.setModel(new Tabela(clientes));
@@ -528,8 +521,8 @@ public class TelaClientes extends javax.swing.JInternalFrame {
             ativo = comboStatusFiltro.getSelectedIndex();
         }
 
-        try (Connection conexao = ConnectionFactory.getConnection()) {
-            Dao dao = new ClienteDao(conexao).buscaLista();
+        try {
+            dao.buscaLista();
 
             if (id != 0) {
                 dao.where("cliente.id", Operador.IGUAL, id);

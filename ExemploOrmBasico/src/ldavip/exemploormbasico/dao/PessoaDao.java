@@ -1,19 +1,19 @@
 package ldavip.exemploormbasico.dao;
 
 import java.sql.Connection;
-import ldavip.exemploormbasico.model.Produto;
+import ldavip.exemploormbasico.model.Pessoa;
 import ldavip.ormbasico.dao.Dao;
 
 /**
  *
  * @author Luis Davi
  */
-public class ProdutoDao extends Dao<Produto> {
+public class PessoaDao extends Dao<Pessoa> {
 
-    public ProdutoDao() {
+    public PessoaDao() {
     }
 
-    public ProdutoDao(Connection conexao) {
+    public PessoaDao(Connection conexao) {
         super(conexao);
     }
 

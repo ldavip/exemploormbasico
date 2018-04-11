@@ -10,6 +10,9 @@ import ldavip.ormbasico.dao.Dao;
  */
 public class ClienteDao extends Dao<Cliente> {
 
+    public ClienteDao() {
+    }
+
     public ClienteDao(Connection conexao) {
         super(conexao);
     }
